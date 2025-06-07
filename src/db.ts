@@ -1,6 +1,8 @@
 import mongoose,{model,Schema} from "mongoose";
+import dotenv from 'dotenv';
+dotenv.config();
 
-mongoose.connect("mongodb+srv://kanavpreetsingh2005:1234@cluster0.5apjy.mongodb.net/brainly").then(()=>{console.log('connected db')})
+mongoose.connect(process.env.MONGO_URL!).then(()=>{console.log('connected db')})
 
 const userSchema=new Schema({
 
